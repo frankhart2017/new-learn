@@ -259,7 +259,6 @@ snowballstemmer==1.2.1
 sortedcollections==0.6.1
 sortedcontainers==1.5.10
 South==1.0.2
-spacy==2.0.12
 SpeechRecognition==3.8.1
 Sphinx==1.7.4
 sphinxcontrib-websupport==1.0.1
@@ -272,7 +271,6 @@ sympy==1.1.1
 tables==3.4.3
 termcolor==1.1.0
 terminado==0.8.1
-tesseract==0.1.3
 testpath==0.3.1
 text-unidecode==1.2
 thinc==6.10.3
@@ -304,7 +302,6 @@ whitenoise==4.1
 widgetsnbextension==3.2.1
 wkhtmltopdf==0.2
 wrapt==1.10.11
-wxPython==4.0.4
 xlrd==1.1.0
 XlsxWriter==1.0.4
 xlwings==0.11.8
