@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CHECK WHAT I LEARNT?</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <p><input type="date" id="date"></p>
+    <p><input type="title" id="title"></p>
+    <p><button type='button' id="check">Check</button></p>
+    <br><hr><br>
+    <p id="ret"></p>
+
+    <script type="text/javascript">
+
+      $("#check").click(function() {
+        var date = $("#date").val();
+        var title = $("#title").val();
+
+        if(date != "" || title != "") {
+          if(date == "")
+            date = "-1"
+          else if(title == "")
+            title = "-1"
+          $.ajax({
+             url: "/check",
+             type: "post",
+             dataType: "json",
+             data: {"date": date, "title": title},
+             success: function(result) {
+               $("#date").val('');
+               $("#title").val('');
+               var ret = "<ul>";
+               for(var i=0; i<result.data.length; i++) {
+                 ret += "<li><a href='/detail?id=" + result.data[i][0] + "'>" + result.data[i][1] + "</a></li>";
+               }
+               ret += "</ul>";
+               $("#ret").html(ret);
+             }
+         });
+        } else {
+          alert("Atleast one data is required!");
+        }
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ADD LEARNING</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <p><input type="text" id="title" placeholder="Title"></p>
+    <p><textarea id="desc" placeholder="Description" rows="10" cols="60"></textarea></p>
+    <p><button type="button" id="add">Add</button></p>
+
+    <script type="text/javascript">
+
+        $("#add").click(function() {
+          var title = $("#title").val();
+          var desc = $("#desc").val();
+
+          if(title != "" && desc != "") {
+              $.ajax({
+                 url: "/add",
+                 type: "post",
+                 dataType: "json",
+                 data: {"title": title, "desc": desc},
+                 success: function(result) {
+                   if(result.ret == "success") {
+                     $("#title").val('');
+                     $("#desc").val('');
+                     alert("Added succesfully!");
+                   }
+                 }
+             });
+          } else {
+            alert("Enter all the details!");
+          }
+        });
+
+    </script>
+
+  </body>
+</html>
