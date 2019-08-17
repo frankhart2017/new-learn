@@ -255,7 +255,6 @@ singledispatch==3.4.0.3
 six==1.11.0
 slackclient==2.1.0
 smart-open==1.8.3
-smartcrop==0.4
 snowballstemmer==1.2.1
 sortedcollections==0.6.1
 sortedcontainers==1.5.10
