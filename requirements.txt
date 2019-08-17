@@ -11,8 +11,6 @@ astroid==1.6.3
 astropy==3.0.2
 async-timeout==3.0.1
 attrs==18.1.0
-# Editable install with no version control (autocrop==0.1.0)
--e /anaconda3/lib/python3.6/site-packages
 aws-xray-sdk==0.95
 awscli==1.16.29
 Babel==2.5.3
