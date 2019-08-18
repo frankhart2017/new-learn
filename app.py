@@ -1,11 +1,22 @@
 from flask import Flask, render_template, request, redirect, jsonify, Response
 from connect import cursor, db
+import pymysql
 
 app = Flask(__name__)
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.secret_key = 'my-secret-key'
 app.config['SESSION_TYPE'] = 'filesystem'
+
+db = pymysql.connect(
+    user="jncpa3or_prod",
+    passwd="password98@",
+    host="103.195.185.104",
+    database="jncpa3or_dev"
+)
+
+cursor = db.cursor()
+
 
 @app.route('/', methods=['GET'])
 def index():
