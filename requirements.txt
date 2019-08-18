@@ -188,7 +188,6 @@ py-cpuinfo==4.0.0
 pyaml==17.12.1
 pyasn1==0.4.4
 pyasn1-modules==0.2.4
-PyAudio==0.2.11
 pybeep==0.0.4
 pycodestyle==2.4.0
 pycosat==0.6.3
