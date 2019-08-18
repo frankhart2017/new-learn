@@ -62,3 +62,6 @@ def detail():
     data = cursor.fetchone()
 
     return render_template("detail.html", title=data[0], desc=data[1])
+
+if __name__ == "__main__":
+    app.run()
