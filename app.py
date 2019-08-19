@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, jsonify, Response
-from connect import cursor, db
+from connect import cursor, db, reconnect
 
 app = Flask(__name__)
 
@@ -10,7 +10,10 @@ app.config['SESSION_TYPE'] = 'filesystem'
 @app.route('/', methods=['GET'])
 def index():
 
-    cursor.execute("SELECT id, title FROM learnt WHERE DATE(timestamp) = CURDATE()")
+    try:
+        cursor.execute("SELECT id, title FROM learnt WHERE DATE(timestamp) = CURDATE()")
+    except:
+        reconnect()
     data = cursor.fetchall()
 
     return render_template("index.html", data=data)
