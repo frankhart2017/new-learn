@@ -1,6 +1,6 @@
-import pymysql
+import mysql.connector
 
-db = pymysql.connect(
+db = mysql.connector.connect(
     user="jncpa3or_prod",
     passwd="password98@",
     host="103.195.185.104",
