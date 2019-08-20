@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, jsonify, Response
+from flask import Flask, render_template, request, redirect, jsonify, Response, Markup
 from connect import cursor, db, reconnect
 
 app = Flask(__name__)
@@ -64,7 +64,7 @@ def detail():
     cursor.execute("SELECT title, description FROM learnt WHERE id=%d" % id)
     data = cursor.fetchone()
 
-    return render_template("detail.html", title=data[0], desc=data[1])
+    return render_template("detail.html", title=data[0], desc=Markup(data[1]))
 
 if __name__ == "__main__":
     app.run()
