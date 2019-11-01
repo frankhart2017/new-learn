@@ -1,4 +1,4 @@
-Flask==0.12.4
+Flask==1.0
 mysql_connector_repackaged==0.3.1
 MySQL-Connector-Python
 gunicorn==19.9.0
